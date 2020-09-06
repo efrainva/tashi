@@ -1,0 +1,5 @@
+{"data":[
+    {"id":1,"subjects":"Math","avg":90,"testdate":"10/15/2020"},
+    {"id":2,"subjects":"Neurology","avg":95,"testdate":"10/15/2020"},
+    {"id":3,"subjects":"chemistry","avg":90,"testdate":"10/15/2020"}
+]}
