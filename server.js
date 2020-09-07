@@ -14,11 +14,11 @@ app.get('/',(req,res)=> {
     res.send(json)
 })
 app.get('/one',async(req,res)=> {
-    console.log(config)
+
     AWS.config.update(config.aws_remote_config);
     const docClient = new AWS.DynamoDB.DocumentClient();
     const params = {
-        TableName: config.aws_table_name
+        TableName: config.aws_dynamodb_table
     };
 
     docClient.scan(params, function(err, data) {
@@ -31,7 +31,7 @@ app.get('/one',async(req,res)=> {
           const { Items } = data;
           res.send({
             success: true,
-            message: 'Loaded fruits',
+            message: 'Loaded data',
             fruits: Items
           });
         }
