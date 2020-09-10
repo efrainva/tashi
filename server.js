@@ -23,7 +23,7 @@ app.get("/students", async (req, res) => {
   AWS.config.update(config.aws_remote_config);
   const docClient = new AWS.DynamoDB.DocumentClient();
   const params = {
-    TableName: config.aws_students
+    TableName: 'students'
   };
   docClient.scan(params, function(err, data) {
     if (err) {
