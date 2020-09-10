@@ -3,7 +3,7 @@ const cors = require('cors');
 const AWS = require('aws-sdk')
 const config = require('./config.js')
 const helmet = require('helmet')
-server.use(helmet());
+app.use(helmet());
 const app = express()
 
 // const corsOptions={
