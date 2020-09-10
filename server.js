@@ -29,7 +29,7 @@ app.get("/students", async (req, res) => {
     if (err) {
       res.send({
         success: false,
-        message: "Error: Server error"
+        message: `server error:${err}`
       });
     } else {
       const { Items } = data;
