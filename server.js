@@ -1,12 +1,18 @@
 const express = require('express')
-const cors = require("cors");
+const cors = require('cors');
 const AWS = require('aws-sdk')
 const config = require('./config.js')
 
 const app = express()
 
+const corsOptions={
+    origin: 'http://example.comhttps://clever-curran-450522.netlify.app',
+    optionsSuccessStatus: 200
+}
+
+app.use(cors(corsOptions))
 app.use(express.json())
-app.use(cors())
+
 app.get("/", (req, res) => {
   res.send("running");
 });
