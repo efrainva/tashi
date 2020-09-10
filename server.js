@@ -197,18 +197,19 @@ app.post("/subject/add", function(req, res, next) {
     const studentInfo = req.body
 
   AWS.config.update(config.aws_remote_config);
+  console.log(studentInfo)
 
   const docClient = new AWS.DynamoDB.DocumentClient();
   var params = {
-    TableName: config.aws_subjects,
+    TableName: 'subjects',
     Item: {
-        studentid: studentInfo.studentid,
+        studentid: parseInt(studentInfo.studentid),
+        subjectid:parseInt(Math.random() * 1000),
         date:studentInfo.date,
         score:studentInfo.score,
         subject:studentInfo.subject,
-        subjectid:parseInt(Math.random() * 1000)
     }
-  };
+};
 
   docClient.put(params, function(err, data) {
     if (err) {
@@ -220,7 +221,7 @@ app.post("/subject/add", function(req, res, next) {
       console.log('data', data , studentInfo);      
       res.send({
         success: true,
-        message: 'Added students',
+        message: 'Added subjects',
         students: data
       });
     }
