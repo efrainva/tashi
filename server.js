@@ -203,7 +203,7 @@ app.post("/subject/add", function(req, res, next) {
   var params = {
     TableName: 'subjects',
     Item: {
-        studentid: parseInt(studentInfo.studentid),
+        studentid: studentInfo.studentid,
         subjectid:parseInt(Math.random() * 1000),
         date:studentInfo.date,
         score:studentInfo.score,
