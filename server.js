@@ -5,10 +5,10 @@ const config = require('./config.js')
 
 const app = express()
 
-const corsOptions={
-    origin: 'http://example.comhttps://clever-curran-450522.netlify.app',
-    optionsSuccessStatus: 200
-}
+// const corsOptions={
+//     origin: 'http://example.comhttps://clever-curran-450522.netlify.app',
+//     optionsSuccessStatus: 200
+// }
 
 app.use(cors())
 app.use(express.json())
