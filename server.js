@@ -2,19 +2,6 @@ const express = require('express')
 const app = express()
 const helmet = require('helmet')
 const cors = require('cors');
-require("greenlock-express")
-    .init({
-        packageRoot: __dirname,
- 
-        // contact for security and critical bug notices
-        configDir: "./greenlock.d",
-        maintainerEmail: "efrainva98@gmail.com",
-        // whether or not to run at cloudscale
-        cluster: false
-    })
-    // Serves on 80 and 443
-    // Get's SSL certificates magically!
-    .serve(app);
 
 const AWS = require('aws-sdk')
 const config = require('./config.js')
