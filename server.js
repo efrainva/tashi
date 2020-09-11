@@ -2,13 +2,13 @@ const express = require('express')
 const app = express()
 const helmet = require('helmet')
 const cors = require('cors');
-const green = require("greenlock-express")
+require("greenlock-express")
     .init({
         packageRoot: __dirname,
  
         // contact for security and critical bug notices
         configDir: "./greenlock.d",
- 
+        maintainerEmail: "efrainva98@gmail.com",
         // whether or not to run at cloudscale
         cluster: false
     })
@@ -19,7 +19,7 @@ const green = require("greenlock-express")
 const AWS = require('aws-sdk')
 const config = require('./config.js')
 
-app.use(green())
+// app.use(green)
 app.use(helmet());
 app.use(cors())
 app.use(express.json())
