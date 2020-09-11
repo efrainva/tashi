@@ -1,15 +1,12 @@
 const express = require('express')
+const app = express()
+const helmet = require('helmet')
 const cors = require('cors');
+
 const AWS = require('aws-sdk')
 const config = require('./config.js')
-const helmet = require('helmet')
-const app = express()
 
-// const corsOptions={
-  //     origin: 'http://example.comhttps://clever-curran-450522.netlify.app',
-  //     optionsSuccessStatus: 200
-  // }
-  
+
 app.use(helmet());
 app.use(cors())
 app.use(express.json())
